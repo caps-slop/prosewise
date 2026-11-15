@@ -1,6 +1,6 @@
 {
   "name": "prosewise",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Write and rewrite prose, code comments and commit messages so they read clearly and not like default AI output, without changing what they say.",
   "author": {
     "name": "caps-slop"

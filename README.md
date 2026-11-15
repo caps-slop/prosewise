@@ -79,6 +79,12 @@ Clone the repository and run `./install.sh` (Claude Code and `~/.agents/skills`)
 `./install.sh --dir <skills folder>` for any other agent. For agents that only read `AGENTS.md`, copy
 [AGENTS.md](AGENTS.md) into your project.
 
+### ChatGPT
+
+Under Skills, choose Create, then Upload from your computer, and upload [`chatgpt/prosewise.zip`](chatgpt/prosewise.zip)
+(plus [`chatgpt/prosewise-voice.zip`](chatgpt/prosewise-voice.zip) if you want the voice profile). ChatGPT takes one
+skill per upload. Notes and limits: [chatgpt/README.md](chatgpt/README.md).
+
 ### Clear the field
 
 Right after installing, **prosewise** looks for other writing skills and plugins on your machine: in Claude Code,

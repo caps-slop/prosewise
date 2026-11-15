@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "prosewise",
   "description": "Write and rewrite prose, code comments and commit messages so they read clearly and not like default AI output, without changing what they say. Optional personal voice profile.",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "author": {
     "name": "caps-slop"
   },
