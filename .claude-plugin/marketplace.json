@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "prosewise",
+  "owner": {
+    "name": "caps-slop"
+  },
+  "description": "prosewise: one merged skill for clear, non-generic writing.",
+  "plugins": [
+    {
+      "name": "prosewise",
+      "source": "./",
+      "description": "Write and rewrite prose, code comments and commit messages so they read clearly and not like default AI output. Optional personal voice profile.",
+      "license": "MIT",
+      "keywords": [
+        "writing",
+        "editing",
+        "humanize",
+        "anti-slop",
+        "commit-messages",
+        "code-comments",
+        "voice"
+      ],
+      "skills": [
+        "./skills/prosewise",
+        "./skills/prosewise-voice",
+        "./skills/prosewise-conflicts"
+      ]
+    }
+  ]
+}

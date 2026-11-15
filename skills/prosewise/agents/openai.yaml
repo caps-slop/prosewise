@@ -1,0 +1,4 @@
+interface:
+  display_name: "prosewise"
+  short_description: "Clear writing without AI tells"
+  default_prompt: "Use $prosewise to rewrite this text so it reads plainly, without changing its facts."

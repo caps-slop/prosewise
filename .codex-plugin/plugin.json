@@ -1,0 +1,38 @@
+{
+  "name": "prosewise",
+  "version": "0.5.1",
+  "description": "Write and rewrite prose, code comments and commit messages so they read clearly and not like default AI output, without changing what they say.",
+  "author": {
+    "name": "caps-slop"
+  },
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "editing",
+    "humanize",
+    "anti-slop",
+    "commit-messages",
+    "code-comments",
+    "voice"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "prosewise",
+    "shortDescription": "Clear writing without AI tells",
+    "longDescription": "Audit, rewrite, edit or write English text, code comments and commit messages. Merges the rules of 19 public writing skills and Wikipedia's field guide to AI writing into one catalogue with sensitivity levels, explicit exceptions and integrity rules that never invent facts. A companion skill builds a personal voice profile from the user's own writing.",
+    "category": "Productivity",
+    "capabilities": [
+      "AI-pattern audit",
+      "Meaning-preserving rewrite",
+      "In-place file edit",
+      "Commit message writing",
+      "Code comment cleanup",
+      "Personal voice profile"
+    ],
+    "defaultPrompt": [
+      "Use $prosewise to audit this text without changing it.",
+      "Use $prosewise to rewrite this draft so it reads plainly, keeping every fact.",
+      "Use $prosewise-voice to build my voice profile from these files."
+    ]
+  }
+}

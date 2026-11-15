@@ -1,0 +1,17 @@
+{
+  "description": "Once per prosewise version, tell the user if other writing skills or plugins are active. Read-only: it never disables anything.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/skills/prosewise-conflicts/scripts/conflicts.py\" notice 2>/dev/null || true",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

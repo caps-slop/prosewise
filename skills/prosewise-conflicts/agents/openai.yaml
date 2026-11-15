@@ -1,0 +1,4 @@
+interface:
+  display_name: "prosewise-conflicts"
+  short_description: "Find and disable competing writing skills"
+  default_prompt: "Use $prosewise-conflicts to check for other writing skills that conflict with prosewise."

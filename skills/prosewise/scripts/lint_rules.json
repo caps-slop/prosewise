@@ -1,0 +1,2608 @@
+{
+ "generated_from": "analysis/rule-catalog.jsonl",
+ "rules": [
+  {
+   "id": "CMS-005",
+   "pattern": "breaking-change marker",
+   "strength": "hard",
+   "scope": "commits",
+   "threshold": "single",
+   "wordlist": [
+    "breaking change:",
+    "!:"
+   ],
+   "module": null
+  },
+  {
+   "id": "CMS-010",
+   "pattern": "self-praise and canned assurances",
+   "strength": "default",
+   "scope": "commits",
+   "threshold": {
+    "strict": "one puffery word is enough",
+    "standard": "two or more assurances, or any 'This commit/PR enhances' opener",
+    "relaxed": "only stacked assurances that replace the substance"
+   },
+   "wordlist": [
+    "enhance",
+    "enhanced",
+    "enhances",
+    "improved",
+    "robust",
+    "streamlined",
+    "refined",
+    "enriched",
+    "ensure",
+    "ensured",
+    "ensures",
+    "adheres to",
+    "in compliance with",
+    "best practices",
+    "for clarity",
+    "maintainability",
+    "seamless",
+    "comprehensive",
+    "this commit",
+    "this pr",
+    "this change"
+   ],
+   "module": null
+  },
+  {
+   "id": "CMS-011",
+   "pattern": "preserved / avoided statements",
+   "strength": "default",
+   "scope": "commits",
+   "threshold": {
+    "strict": "any instance",
+    "standard": "flag when not the point of the change",
+    "relaxed": "flag only when stacked"
+   },
+   "wordlist": [
+    "preserved",
+    "preserving",
+    "retained",
+    "retaining",
+    "avoided",
+    "avoiding",
+    "while keeping",
+    "without changing",
+    "aimed to",
+    "aiming to"
+   ],
+   "module": null
+  },
+  {
+   "id": "CMS-012",
+   "pattern": "process instead of substance",
+   "strength": "default",
+   "scope": "commits",
+   "threshold": {
+    "strict": "any process-only phrase",
+    "standard": "process phrase with no concrete object",
+    "relaxed": "only when the whole message is process"
+   },
+   "wordlist": [
+    "address review feedback",
+    "addressing feedback",
+    "per review",
+    "per reviewer feedback",
+    "apply suggestions",
+    "added tests"
+   ],
+   "module": null
+  },
+  {
+   "id": "CMS-013",
+   "pattern": "chatbot formatting in commit text",
+   "strength": "default",
+   "scope": "commits",
+   "threshold": "single",
+   "wordlist": [
+    "here is",
+    "i have",
+    "i've",
+    "i updated",
+    "**",
+    "✨",
+    "🚀",
+    "🐛",
+    "✅",
+    "📝"
+   ],
+   "module": null
+  },
+  {
+   "id": "CMS-017",
+   "pattern": "attribution trailers are configuration",
+   "strength": "hard",
+   "scope": "commits",
+   "threshold": "n/a",
+   "wordlist": [
+    "co-authored-by:",
+    "generated with"
+   ],
+   "module": null
+  },
+  {
+   "id": "CMT-005",
+   "pattern": "banner / divider comments",
+   "strength": "default",
+   "scope": "comments",
+   "threshold": "single",
+   "wordlist": [
+    "// ====",
+    "// ----",
+    "# ====",
+    "# ----",
+    "#region",
+    "// #region",
+    "/* ==="
+   ],
+   "module": null
+  },
+  {
+   "id": "CMT-007",
+   "pattern": "diff-anchored / changelog comments",
+   "strength": "default",
+   "scope": "comments",
+   "threshold": "single",
+   "wordlist": [
+    "added",
+    "replaced",
+    "no longer",
+    "previously",
+    "now uses",
+    "updated to",
+    "changed to",
+    "refactored",
+    "fix for bug",
+    "added by",
+    "new:"
+   ],
+   "module": null
+  },
+  {
+   "id": "CMT-010",
+   "pattern": "emphasis-only comments",
+   "strength": "default",
+   "scope": "comments",
+   "threshold": "single",
+   "wordlist": [
+    "important:",
+    "note:",
+    "critical:",
+    "warning:",
+    "do not remove",
+    "don't touch",
+    "be careful"
+   ],
+   "module": null
+  },
+  {
+   "id": "CMT-011",
+   "pattern": "load-bearing annotations and directives",
+   "strength": "hard",
+   "scope": "comments",
+   "threshold": "single",
+   "wordlist": [
+    "eslint-disable",
+    "eslint-enable",
+    "@ts-ignore",
+    "@ts-expect-error",
+    "noqa",
+    "type: ignore",
+    "pylint: disable",
+    "biome-ignore",
+    "prettier-ignore",
+    "nolint",
+    "#pragma",
+    "// go:",
+    "# fmt: off",
+    "# fmt: on",
+    "coverage: ignore",
+    "istanbul ignore"
+   ],
+   "module": null
+  },
+  {
+   "id": "CMT-012",
+   "pattern": "dead tool directives",
+   "strength": "soft",
+   "scope": "comments",
+   "threshold": "single",
+   "wordlist": [
+    "eslint-disable",
+    "eslint-enable",
+    "tslint:disable",
+    "jshint",
+    "jscs:"
+   ],
+   "module": null
+  },
+  {
+   "id": "FMT-001",
+   "pattern": "bold overuse",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "no bold in running prose except UI element names in docs and safety warnings",
+    "standard": "at most one bolded phrase per section (or per ~300 words); never the same term twice",
+    "relaxed": "flag only when bold appears in most paragraphs or on random words"
+   },
+   "wordlist": [
+    "**"
+   ],
+   "module": null
+  },
+  {
+   "id": "FMT-008",
+   "pattern": "boilerplate paired headings",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "awards and recognition",
+    "challenges and future directions",
+    "challenges and legacy",
+    "future directions",
+    "recognition"
+   ],
+   "module": null
+  },
+  {
+   "id": "FMT-011",
+   "pattern": "rules between sections",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "no horizontal rules in prose",
+    "standard": "flag rules between most sections",
+    "relaxed": "flag only rules between every section"
+   },
+   "wordlist": [
+    "***",
+    "---"
+   ],
+   "module": null
+  },
+  {
+   "id": "FMT-013",
+   "pattern": "arrow chains",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "no arrow chains in prose",
+    "standard": "max three nodes",
+    "relaxed": "max five nodes"
+   },
+   "wordlist": [
+    "->",
+    "=>",
+    "→"
+   ],
+   "module": null
+  },
+  {
+   "id": "FMT-015",
+   "pattern": "code fences for payloads only",
+   "strength": "default",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "```"
+   ],
+   "module": null
+  },
+  {
+   "id": "FMT-016",
+   "pattern": "markup leakage",
+   "strength": "default",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "##",
+    "**",
+    "[text](url)",
+    "```"
+   ],
+   "module": null
+  },
+  {
+   "id": "FMT-019",
+   "pattern": "descriptive link text",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "click here",
+    "here",
+    "this link"
+   ],
+   "module": null
+  },
+  {
+   "id": "FMT-020",
+   "pattern": "docs markup conventions",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "etc."
+   ],
+   "module": null
+  },
+  {
+   "id": "FMT-022",
+   "pattern": "table content and captions",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": "n/a",
+   "wordlist": [
+    "results are reported in table"
+   ],
+   "module": "academic-econ"
+  },
+  {
+   "id": "FMT-024",
+   "pattern": "LaTeX table typography",
+   "strength": "soft",
+   "scope": "all",
+   "threshold": "n/a",
+   "wordlist": [
+    "\\hline"
+   ],
+   "module": "academic-econ"
+  },
+  {
+   "id": "INT-007",
+   "pattern": "no injected stance or persona",
+   "strength": "hard",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "in a world where",
+    "now more than ever",
+    "the stakes have never been higher",
+    "let's be honest",
+    "real talk",
+    "here's the thing"
+   ],
+   "module": null
+  },
+  {
+   "id": "INT-009",
+   "pattern": "leftover placeholders",
+   "strength": "hard",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "[your name]",
+    "[insert",
+    "[describe",
+    "insert_source_url",
+    "2025-xx-xx",
+    "paste_",
+    "[name]",
+    "entertainer's name"
+   ],
+   "module": null
+  },
+  {
+   "id": "INT-010",
+   "pattern": "speculative gap-filling",
+   "strength": "hard",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "is believed to have",
+    "likely began",
+    "likely grew up",
+    "maintains a relatively low profile",
+    "maintains a low profile",
+    "keeps personal details private"
+   ],
+   "module": null
+  },
+  {
+   "id": "INT-015",
+   "pattern": "notability by name-dropping outlets",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "single",
+    "standard": "single",
+    "relaxed": "cluster"
+   },
+   "wordlist": [
+    "independent coverage",
+    "regional media outlets",
+    "trade publications",
+    "cited in",
+    "featured in",
+    "profiled in",
+    "written by a leading expert",
+    "has been mentioned in"
+   ],
+   "module": null
+  },
+  {
+   "id": "INT-018",
+   "pattern": "invented debate framing",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "generated debate",
+    "prompted broader reflection",
+    "raising questions about",
+    "shaped policy discussions"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-001",
+   "pattern": "core AI vocabulary (tier 1)",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "writing or reviewing: replace any single occurrence that is not the plainest accurate word",
+    "standard": "writing: avoid each word unless it is the plainest accurate term; reviewing: flag a paragraph with 2+ distinct list words, or one word repeated across the piece",
+    "relaxed": "flag only a paragraph with 3+ distinct list words"
+   },
+   "wordlist": [
+    "delve",
+    "delving",
+    "tapestry",
+    "rich tapestry",
+    "realm",
+    "testament",
+    "a testament to",
+    "pivotal",
+    "intricate",
+    "intricacies",
+    "meticulous",
+    "meticulously",
+    "underscore (verb)",
+    "underscores",
+    "showcase",
+    "showcasing",
+    "garner",
+    "garnered",
+    "interplay",
+    "vibrant",
+    "multifaceted",
+    "foster",
+    "fostering",
+    "bolster",
+    "bolstered",
+    "landscape (abstract)",
+    "paradigm (figurative)",
+    "synergy",
+    "embark",
+    "beacon",
+    "symphony",
+    "kaleidoscope",
+    "ever-evolving",
+    "holistic",
+    "deep dive",
+    "unpack (figurative)",
+    "crucial",
+    "leverage (verb)",
+    "streamline",
+    "robust (figurative)",
+    "revolutionize",
+    "unleash",
+    "unlock (hype)",
+    "supercharge",
+    "elevate your",
+    "embrace (figurative)",
+    "hit differently",
+    "watershed moment",
+    "nexus",
+    "liminal",
+    "additionally",
+    "align with",
+    "landscape",
+    "robust",
+    "seamless",
+    "underscore",
+    "comprehensive",
+    "empower",
+    "harness",
+    "game-changer",
+    "unlock",
+    "notably",
+    "furthermore",
+    "groundbreaking",
+    "shed light on",
+    "pave the way"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-002",
+   "pattern": "cluster-only inflated vocabulary (tier 2)",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "flag any paragraph with 2+ distinct list words",
+    "standard": "flag a paragraph with 2+ distinct list words, or 3+ in a short piece",
+    "relaxed": "flag a paragraph with 3+ distinct list words"
+   },
+   "wordlist": [
+    "harness (figurative)",
+    "navigate (figurative)",
+    "elevate",
+    "empower",
+    "spearhead",
+    "resonate",
+    "underpin",
+    "underpinning",
+    "underpinnings",
+    "nuanced",
+    "encompass",
+    "ecosystem (figurative)",
+    "framework (figurative)",
+    "myriad",
+    "plethora",
+    "catalyze",
+    "reimagine",
+    "galvanize",
+    "augment",
+    "cultivate",
+    "illuminate",
+    "elucidate",
+    "juxtapose",
+    "paradigm-shifting",
+    "transformation",
+    "transformative",
+    "cornerstone",
+    "paramount",
+    "poised",
+    "burgeoning",
+    "nascent",
+    "quintessential",
+    "overarching",
+    "comprehensive",
+    "enhance",
+    "highlight (verb)",
+    "key (adjective)",
+    "valuable",
+    "align with",
+    "daunting",
+    "impactful",
+    "actionable",
+    "learnings",
+    "best practices",
+    "thought leader",
+    "thought leadership",
+    "keen",
+    "intertwine",
+    "entwine",
+    "weave",
+    "grapple",
+    "unravel",
+    "unveil",
+    "transcend",
+    "reverberate",
+    "exemplify",
+    "amplify",
+    "glean",
+    "strive",
+    "thrive",
+    "flourishing",
+    "indelible",
+    "poignant",
+    "profound",
+    "captivating",
+    "unparalleled",
+    "unwavering",
+    "relentless",
+    "tireless",
+    "invaluable",
+    "noteworthy",
+    "commendable",
+    "exemplary",
+    "versatile",
+    "pervasive",
+    "whimsical",
+    "thought-provoking",
+    "crucible",
+    "enigma",
+    "epicenter",
+    "linchpin",
+    "pinnacle",
+    "bedrock",
+    "hallmark",
+    "foray",
+    "quest",
+    "journey (figurative)",
+    "lens (figurative)",
+    "facet",
+    "trajectory",
+    "treasure trove",
+    "paradigm shift",
+    "enduring"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-003",
+   "pattern": "vague-praise word density (tier 3)",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "same form used 2+ times per 500 words",
+    "standard": "same form used max(3, 3% of words) times or more",
+    "relaxed": "same form used 5+ times per 500 words"
+   },
+   "wordlist": [
+    "significant",
+    "significantly",
+    "innovative",
+    "innovation",
+    "effective",
+    "effectively",
+    "dynamic",
+    "dynamics",
+    "scalable",
+    "scalability",
+    "compelling",
+    "unprecedented",
+    "exceptional",
+    "exceptionally",
+    "remarkable",
+    "remarkably",
+    "sophisticated",
+    "instrumental",
+    "world-class",
+    "state-of-the-art",
+    "best-in-class",
+    "verbatim"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-004",
+   "pattern": "era / model-specific vocabulary watch-list",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag 2+ distinct watch-list words in a paragraph",
+    "standard": "flag 3+ distinct watch-list words in a paragraph",
+    "relaxed": "report only, never rewrite on this alone"
+   },
+   "wordlist": [
+    "challenge",
+    "clearer",
+    "dependable",
+    "echoed",
+    "foster",
+    "leverage",
+    "matters",
+    "multifaceted",
+    "practical",
+    "prioritize",
+    "quietly",
+    "steady",
+    "universally",
+    "causal",
+    "empirical",
+    "correlate"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-005",
+   "pattern": "copula avoidance",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "replace any single copula substitute that does not add meaning",
+    "standard": "replace when the verb adds nothing; flag 2+ in a paragraph",
+    "relaxed": "flag only 3+ in a paragraph"
+   },
+   "wordlist": [
+    "serves as",
+    "stands as",
+    "features",
+    "marks",
+    "represents",
+    "functions as",
+    "operates as",
+    "boasts",
+    "offers",
+    "maintains",
+    "refers to",
+    "represents a",
+    "offers a",
+    "ventured into",
+    "began his career as"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-006",
+   "pattern": "significance / legacy puffery",
+   "strength": "default",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "a pivotal moment",
+    "contributing to",
+    "crucial",
+    "crucial role",
+    "deeply rooted",
+    "define the next era",
+    "enduring legacy",
+    "evolution of",
+    "evolving landscape",
+    "exciting times ahead",
+    "focal point",
+    "fundamentally reshape",
+    "highlighting",
+    "indelible mark",
+    "is a testament",
+    "key turning point",
+    "lasting impact",
+    "lasting legacy",
+    "marking the",
+    "pivotal",
+    "pivotal moment",
+    "plays a key role",
+    "plays a vital role",
+    "reflecting broader trends",
+    "reflects a broader",
+    "reflects broader",
+    "setting the stage for",
+    "shaping the",
+    "something entirely new",
+    "stands as",
+    "stands as a testament",
+    "testament",
+    "testament to",
+    "the future looks bright",
+    "underscores its importance",
+    "underscoring",
+    "vital",
+    "watershed"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-007",
+   "pattern": "promotional adjectives",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "any single occurrence",
+    "standard": "any single occurrence in neutral text (docs, comments, commits, reports); 2+ in marketing copy",
+    "relaxed": "2+ in a paragraph"
+   },
+   "wordlist": [
+    "groundbreaking",
+    "seamless",
+    "seamlessly",
+    "robust",
+    "cutting-edge",
+    "breathtaking",
+    "stunning",
+    "nestled",
+    "boasts",
+    "in the heart of",
+    "vibrant",
+    "rich tapestry",
+    "game-changing",
+    "world-class",
+    "best-in-class",
+    "bustling",
+    "future-proof",
+    "nestled in the heart of",
+    "renowned",
+    "must-try",
+    "diverse array",
+    "profound",
+    "exemplifies",
+    "commitment to"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-008",
+   "pattern": "hype and launch copy",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "a [adj] step towards",
+    "a game-changer",
+    "a major step forward for",
+    "batteries included",
+    "boasts a",
+    "breathtaking",
+    "commitment to",
+    "diverse array",
+    "dynamic blend",
+    "enhancing",
+    "enter [product].",
+    "exciting possibilities lie ahead",
+    "exemplifies",
+    "featuring",
+    "groundbreaking",
+    "groundbreaking advancement",
+    "in the heart of",
+    "it just works",
+    "meet [product], your new favorite",
+    "mind-blowing",
+    "must-visit",
+    "natural beauty",
+    "nestled",
+    "paving the way for",
+    "profound",
+    "pushing the boundaries",
+    "redefine the future",
+    "renowned",
+    "represents a significant milestone",
+    "revolutionizing the way",
+    "rich (figurative)",
+    "rich cultural heritage",
+    "sane defaults",
+    "say hello to [product]",
+    "showcasing",
+    "small enough to fit in your head",
+    "stunning",
+    "think x meets y",
+    "this changes everything",
+    "unlocking the power of",
+    "vibrant",
+    "zero config"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-009",
+   "pattern": "corporate jargon and boilerplate",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "any single occurrence",
+    "standard": "any single occurrence of an idiom (circle back, double down, lean into, touch base); 2+ distinct boilerplate phrases per piece",
+    "relaxed": "2+ in a paragraph"
+   },
+   "wordlist": [
+    "active social media presence",
+    "align with",
+    "aligns with",
+    "amplify",
+    "as per",
+    "at your earliest convenience",
+    "bandwidth",
+    "circle back",
+    "commitment to",
+    "community-driven",
+    "dedicated to excellence",
+    "dedication to",
+    "double down",
+    "emerging sector",
+    "kindly",
+    "lean into",
+    "long-term sustainability",
+    "maintains a strong digital presence",
+    "moving forward",
+    "on the same page",
+    "pain point",
+    "per my last",
+    "please find attached",
+    "take a step back",
+    "the integration of",
+    "the intersection of",
+    "touch base",
+    "user engagement",
+    "value proposition",
+    "wanted to reach out"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-010",
+   "pattern": "dead metaphors and invented labels",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "any single occurrence",
+    "standard": "any single metaphor noun used figuratively; invented labels at 2+ per piece",
+    "relaxed": "invented labels at 3+ per piece"
+   },
+   "wordlist": [
+    "bedrock",
+    "creep",
+    "divide",
+    "endgame",
+    "evacuate (move code)",
+    "flywheel",
+    "gold-plating",
+    "harness (metaphor)",
+    "inversion",
+    "load-bearing",
+    "locus",
+    "modality",
+    "nexus",
+    "north star",
+    "paradigm",
+    "paradox",
+    "primitive (noun)",
+    "ratchet (metaphor)",
+    "scaffolding (metaphor)",
+    "substrate",
+    "surface (api surface)",
+    "swiss army knife",
+    "trap",
+    "vacuum",
+    "vantage",
+    "vector",
+    "wedge"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-011",
+   "pattern": "wordy stock phrases",
+   "strength": "soft",
+   "scope": "all",
+   "threshold": {
+    "strict": "any single occurrence",
+    "standard": "2+ in a paragraph, or the same phrase repeated in a piece",
+    "relaxed": "report only"
+   },
+   "wordlist": [
+    "in order to",
+    "due to the fact that",
+    "the question as to whether",
+    "there is no doubt but that",
+    "used for ... purposes",
+    "in a ... manner",
+    "he is a man who",
+    "this is a subject which",
+    "as to whether",
+    "the fact that",
+    "owing to the fact that",
+    "in spite of the fact that",
+    "along these lines",
+    "one of the most",
+    "in terms of",
+    "in the event that",
+    "we perform a regression",
+    "we conduct a regression",
+    "we carry out a regression"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-012",
+   "pattern": "plain word over fancy synonym",
+   "strength": "soft",
+   "scope": "all",
+   "threshold": {
+    "strict": "replace any stiff synonym",
+    "standard": "replace when the plain word means the same",
+    "relaxed": "report only"
+   },
+   "wordlist": [
+    "utilize",
+    "facilitate",
+    "commence",
+    "ascertain",
+    "endeavor",
+    "numerous",
+    "possess",
+    "authored",
+    "relocated",
+    "attempted",
+    "passed away",
+    "perform (as do)"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-013",
+   "pattern": "omit needless words",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "cut every padding noun and redundant clause",
+    "standard": "cut padding that adds no meaning; keep rhythm and detail",
+    "relaxed": "report only"
+   },
+   "wordlist": [
+    "case",
+    "character",
+    "each and every",
+    "factor",
+    "feature",
+    "first and foremost",
+    "nature",
+    "plays a key role in",
+    "respectively",
+    "serves to highlight",
+    "system",
+    "various different",
+    "viewpoint"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-014",
+   "pattern": "concrete over abstract",
+   "strength": "default",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "we examine the relationship between",
+    "we explore the relationship between",
+    "we investigate the relationship between"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-016",
+   "pattern": "literal-reader wording",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag every idiom and Latin abbreviation",
+    "standard": "flag idioms in procedures and reference docs; flag term-of-art collisions",
+    "relaxed": "report only"
+   },
+   "wordlist": [
+    "e.g.",
+    "i.e.",
+    "etc.",
+    "proof (outside a formal proof)",
+    "proof point"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-017",
+   "pattern": "precise usage: fact, while",
+   "strength": "soft",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "fact",
+    "while",
+    "models where"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-018",
+   "pattern": "unnecessary hyphenation",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "code-base",
+    "data-set",
+    "time-frame",
+    "road-map",
+    "in real-time",
+    "out-of-the-box"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-019",
+   "pattern": "signposting and emphasis crutches",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "any single occurrence",
+    "standard": "any single 'it's worth noting / it's important to note' frame or crutch line (Full stop. Let that sink in.); attitude adverbs at 2+ per piece",
+    "relaxed": "2+ frames per piece"
+   },
+   "wordlist": [
+    "a comment is in order",
+    "always check before",
+    "an important question in the literature is",
+    "and here's the part most people miss",
+    "at its core",
+    "at the end of the day",
+    "at the heart of",
+    "cannot be overstated",
+    "certainly",
+    "full stop.",
+    "genuinely",
+    "here's the interesting part",
+    "here's what's interesting",
+    "here's why that matters",
+    "history is clear",
+    "importantly",
+    "in terms of",
+    "interestingly",
+    "it bears mentioning",
+    "it is crucial to differentiate",
+    "it is easy to show that",
+    "it is essential to",
+    "it is important to note that",
+    "it is worth noting that",
+    "it should be noted that",
+    "it's crucial to understand",
+    "it's important to note",
+    "it's important to note that",
+    "it's important to remember",
+    "it's worth noting",
+    "it's worth noting that",
+    "let that sink in.",
+    "make no mistake",
+    "notably",
+    "period.",
+    "significantly",
+    "surprisingly",
+    "the reality is",
+    "the reality is simpler",
+    "the reality is that",
+    "the truth is simple",
+    "this matters because",
+    "this paper contributes to the literature by",
+    "this serves as a reminder",
+    "this underscores the importance of",
+    "to prevent confusion",
+    "undoubtedly",
+    "when it comes to",
+    "without a doubt",
+    "worth mentioning"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-020",
+   "pattern": "hollow intensifiers and magic adverbs",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "any listed intensifier that can be deleted without changing meaning",
+    "standard": "a listed intensifier that adds nothing; 'quietly/deeply/fundamentally' as significance props at any count; others at 2+ per paragraph",
+    "relaxed": "3+ per paragraph"
+   },
+   "wordlist": [
+    "genuine",
+    "genuinely",
+    "truly",
+    "quite frankly",
+    "to be honest",
+    "let's be clear",
+    "actually",
+    "really",
+    "just",
+    "literally",
+    "honestly",
+    "simply",
+    "deeply",
+    "fundamentally",
+    "inherently",
+    "inevitably",
+    "interestingly",
+    "importantly",
+    "crucially",
+    "very",
+    "so (intensifier)",
+    "certainly",
+    "interesting",
+    "quietly",
+    "remarkably",
+    "arguably",
+    "quickly",
+    "significantly",
+    "real (empty intensifier)",
+    "true (empty intensifier)",
+    "striking",
+    "very novel",
+    "very significant"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-021",
+   "pattern": "stock transitions",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "any stock connector opening a sentence",
+    "standard": "3+ stock connectors per 500 words, or the same connector twice in a paragraph",
+    "relaxed": "report only"
+   },
+   "wordlist": [
+    "moreover",
+    "furthermore",
+    "additionally",
+    "in addition",
+    "notably",
+    "that said",
+    "that being said",
+    "consequently",
+    "conversely",
+    "subsequently",
+    "accordingly",
+    "thus",
+    "hence",
+    "thereby",
+    "therein",
+    "thereof",
+    "herein",
+    "heretofore",
+    "whilst",
+    "amidst",
+    "notwithstanding",
+    "nonetheless",
+    "nevertheless",
+    "namely",
+    "akin",
+    "advent",
+    "arduous",
+    "broadly speaking",
+    "generally speaking"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-022",
+   "pattern": "hedge stacking",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "2+ hedges on one claim",
+    "standard": "2+ hedges on one claim",
+    "relaxed": "3+ hedges on one claim"
+   },
+   "wordlist": [
+    "could possibly",
+    "could potentially",
+    "could potentially possibly",
+    "depending on the context",
+    "in some cases it may",
+    "it's also possible",
+    "may eventually",
+    "might arguably",
+    "might ultimately",
+    "one could argue that",
+    "this is an inference",
+    "this may potentially indicate",
+    "to be fair"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-023",
+   "pattern": "lazy extremes",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "check every universal",
+    "standard": "flag universals not backed by the text",
+    "relaxed": "report only"
+   },
+   "wordlist": [
+    "every",
+    "always",
+    "never",
+    "everyone",
+    "everybody",
+    "nobody"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-024",
+   "pattern": "moral-adjective category error",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "honest",
+    "honestly",
+    "faithful",
+    "faithfully",
+    "truthful"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-025",
+   "pattern": "throat-clearing openers and staged run-ups",
+   "strength": "default",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "as technology continues to evolve",
+    "can we talk about",
+    "heads up",
+    "here's that [x]",
+    "here's the problem though",
+    "here's the thing",
+    "here's this [x]",
+    "here's what [x]",
+    "here's what i find interesting",
+    "here's what i mean:",
+    "here's what you need to know",
+    "here's why [x]",
+    "honestly?",
+    "i recently had the pleasure of",
+    "i'll say it again:",
+    "i'm going to be honest",
+    "imagine a world where",
+    "in a world where",
+    "in the dynamic world of",
+    "in the rapidly evolving world of",
+    "in the realm of",
+    "in today's",
+    "in today's digital age",
+    "in today's ever-evolving world",
+    "in today's fast-paced world",
+    "in today's rapidly evolving landscape",
+    "it turns out",
+    "let me be clear",
+    "let's be honest",
+    "let's break this down",
+    "let's dive in",
+    "let's dive into",
+    "let's examine",
+    "let's explore",
+    "let's take a look",
+    "look,",
+    "now let's look at",
+    "now more than ever",
+    "one of the most important aspects",
+    "one thing that bit me, so pay attention",
+    "quick note",
+    "real talk",
+    "since the dawn of time",
+    "the thing is",
+    "when it comes to",
+    "whether you're a beginner or an expert",
+    "whether you're x or y",
+    "without further ado"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-026",
+   "pattern": "fake suspense and teaser hooks",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "any single occurrence",
+    "standard": "any single standalone teaser fragment; 2+ softer lead-ins (turns out, the truth is) per piece",
+    "relaxed": "2+ teasers per piece"
+   },
+   "wordlist": [
+    "the catch?",
+    "the kicker?",
+    "here's the thing.",
+    "but here's the kicker",
+    "the best part?",
+    "plot twist:",
+    "the result?",
+    "honestly?",
+    "real talk:",
+    "here's the thing",
+    "here's the kicker",
+    "here's where it gets interesting",
+    "here's what most people miss",
+    "but here's the truth",
+    "but here's what nobody's saying",
+    "the truth is",
+    "let's face it",
+    "you're not imagining it",
+    "the uncomfortable truth is",
+    "it turns out",
+    "spoiler:",
+    "hint:"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-027",
+   "pattern": "canned closers and recap formulas",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "any listed closer anywhere",
+    "standard": "listed phrase opening a final sentence or paragraph, or a Conclusion section in a short piece",
+    "relaxed": "only 'in conclusion / to sum up' recaps that repeat earlier text"
+   },
+   "wordlist": [
+    "in conclusion",
+    "overall",
+    "ultimately",
+    "to wrap up",
+    "in summary",
+    "to summarize",
+    "to sum up",
+    "at the end of the day",
+    "a key takeaway is",
+    "the bottom line is",
+    "conclusion"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-028",
+   "pattern": "formulaic challenge / outlook closers",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "a step in the right direction",
+    "as we move forward",
+    "awards and recognition",
+    "challenges and legacy",
+    "continues to thrive",
+    "despite its",
+    "despite ongoing challenges, x continues to thrive",
+    "despite these challenges",
+    "exciting possibilities lie ahead",
+    "exciting times ahead",
+    "faces several challenges",
+    "future outlook",
+    "future prospects",
+    "looking ahead, x will play an increasingly pivotal role",
+    "one thing is certain",
+    "only time will tell",
+    "poised to become one of the most",
+    "the future looks bright"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-029",
+   "pattern": "chatbot residue and sycophancy",
+   "strength": "hard",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "absolutely!",
+    "absolutely! here's what you need",
+    "certainly!",
+    "certainly! i'd be happy to",
+    "certainly, here are",
+    "changes:",
+    "curious to hear your thoughts",
+    "don't hesitate to ask if you need more information!",
+    "excellent point",
+    "feel free to reach out",
+    "feel free to reach out if you have questions!",
+    "found the smoking gun!",
+    "great question",
+    "great question!",
+    "here is a",
+    "here is a comprehensive",
+    "here's a comprehensive overview",
+    "hope this finds you well",
+    "hope this helps",
+    "i hope this helps",
+    "i hope this helps!",
+    "i'd love your perspective",
+    "i'd value your take on this",
+    "improvements:",
+    "in this article, we will explore",
+    "is there anything else",
+    "let me know",
+    "let me know if",
+    "let me know if you need anything else",
+    "let me know if you need anything else!",
+    "love this",
+    "more detailed breakdown",
+    "of course!",
+    "of course! let me",
+    "should i continue",
+    "should i continue?",
+    "sure! here's",
+    "that's a really insightful observation",
+    "want me to",
+    "what a great idea",
+    "would you like",
+    "you're absolutely right",
+    "you're absolutely right!"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-030",
+   "pattern": "cutoff, refusal and info-gap disclaimers",
+   "strength": "hard",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "as a large language model",
+    "as an ai language model",
+    "as of my last knowledge update",
+    "as of my last update",
+    "based on available information",
+    "based on the information provided",
+    "details are limited",
+    "i cannot offer medical advice",
+    "i don't have access to real-time data",
+    "i'm sorry",
+    "in the provided sources",
+    "in the search results",
+    "it is believed that",
+    "likely began",
+    "not publicly available",
+    "not widely available",
+    "not widely documented",
+    "up to my last training update",
+    "while specific details are limited",
+    "while specific details are limited based on available information"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-031",
+   "pattern": "reasoning leaks and meta-commentary",
+   "strength": "default",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "let me think step by step",
+    "breaking this down",
+    "to approach this systematically",
+    "here's my thought process",
+    "first, let's consider",
+    "working through this logically",
+    "you already know this, but",
+    "but that's another post",
+    "the rest of this essay explains...",
+    "let me walk you through...",
+    "in this section, we'll...",
+    "as we'll see...",
+    "i want to explore..."
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-032",
+   "pattern": "leaked tool tokens and placeholders",
+   "strength": "hard",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "2025-xx-xx",
+    "<!-- add citation if available -->",
+    "[attached_file:1]",
+    "[cite:",
+    "[describe the specific section]",
+    "[insert source url]",
+    "[your name]",
+    "attached_file",
+    "attributableindex",
+    "citeturn0search0",
+    "contentreference",
+    "contentreference[oaicite:0]",
+    "grok_card",
+    "oai_citation",
+    "oaicite",
+    "ppl-ai-file-upload",
+    "referrer=grok.com",
+    "start_span",
+    "turn0search",
+    "utm_source=chatgpt.com",
+    "utm_source=claude.ai",
+    "utm_source=copilot.com",
+    "utm_source=openai",
+    "utm_source=perplexity.ai"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-033",
+   "pattern": "vague attribution (weasel words)",
+   "strength": "hard",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "according to sources",
+    "analysts agree",
+    "described in scholarship",
+    "experts agree",
+    "experts argue",
+    "experts believe",
+    "experts say",
+    "featured in",
+    "independent testing confirms",
+    "industry leaders",
+    "industry leaders agree",
+    "industry reports",
+    "industry reports suggest",
+    "multiple publications",
+    "observers have cited",
+    "observers have noted",
+    "over n followers",
+    "research suggests",
+    "several publications",
+    "several sources",
+    "some critics",
+    "some critics argue",
+    "studies show",
+    "third-party benchmarks show",
+    "widely regarded"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-034",
+   "pattern": "vague association",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "any single occurrence",
+    "standard": "any occurrence where the source states the relation; 2+ unexplained per piece",
+    "relaxed": "2+ per paragraph"
+   },
+   "wordlist": [
+    "associated with",
+    "in association with",
+    "connected to",
+    "in connection with",
+    "linked to",
+    "tied to",
+    "connected with",
+    "became associated with",
+    "widely associated"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-036",
+   "pattern": "aphorisms and hidden-truth framing",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "the real question is",
+    "at its core",
+    "in reality",
+    "what really matters",
+    "fundamentally",
+    "the deeper issue",
+    "the heart of the matter",
+    "the language of",
+    "the currency of",
+    "the architecture of",
+    "becomes a trap",
+    "not a tool but a mirror",
+    "make no mistake",
+    "the truth is",
+    "x is the language of y"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-037",
+   "pattern": "announced significance",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "this is genuinely hard",
+    "this is what leadership actually looks like",
+    "this is what x actually looks like",
+    "actually matters",
+    "the reasons are structural",
+    "the implications are significant",
+    "this is the deepest problem",
+    "the stakes are high",
+    "the consequences are real",
+    "that last move is the contrarian one"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-038",
+   "pattern": "performed insight and novelty inflation",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "any single occurrence",
+    "standard": "any novelty or crowd claim; performed-insight tics at 2+ per piece",
+    "relaxed": "2+ per piece"
+   },
+   "wordlist": [
+    "sit with that for a moment",
+    "that's not nothing",
+    "you already know the answer",
+    "don't take my word for it",
+    "that's the whole point",
+    "is the entire business model",
+    "that's the part nobody mentions",
+    "the only metric that matters",
+    "that's why it mattered",
+    "turns out",
+    "he introduced a term",
+    "she coined the phrase",
+    "a concept nobody's naming",
+    "a failure mode nobody talks about",
+    "the insight everyone's missing",
+    "what nobody tells you about",
+    "most people don't realize",
+    "everyone's sleeping on",
+    "the truth nobody talks about",
+    "what nobody's saying",
+    "while everyone else was still debating",
+    "the call most leaders won't make"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-039",
+   "pattern": "performed sincerity and reader management",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "i would rather flag",
+    "i want to be upfront",
+    "to be fully transparent",
+    "rather than bury this",
+    "i could have left this out",
+    "being honest about the limitations",
+    "in the interest of full disclosure",
+    "the line i keep coming back to",
+    "i can't stop thinking about this",
+    "still thinking about this one",
+    "rattling around in my head",
+    "i've been chewing on this",
+    "what surprised me most",
+    "i was fascinated to discover",
+    "what struck me was",
+    "i was excited to learn",
+    "the most interesting part",
+    "interesting part of the project",
+    "hits different",
+    "creeps in",
+    "i promise",
+    "they exist, i promise",
+    "think about it:",
+    "and that's okay."
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-041",
+   "pattern": "phantom objections and false concessions",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "any single occurrence",
+    "standard": "any phantom objection or vague-both-halves concession; several in a row is a strong tell",
+    "relaxed": "2+ per piece"
+   },
+   "wordlist": [
+    "this isn't mainly about",
+    "i'm not saying",
+    "to be clear",
+    "don't get me wrong",
+    "this is not to say",
+    "some might say",
+    "a tempting approach would be",
+    "one might be tempted to",
+    "you might think",
+    "it would be easy to just",
+    "you might think... but"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-043",
+   "pattern": "social-media register props",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "any single occurrence",
+    "standard": "any endorsement or announcement formula; casual props at 2+ per piece",
+    "relaxed": "endorsements without a reason only"
+   },
+   "wordlist": [
+    "this one is worth your time",
+    "must-read",
+    "i highly recommend giving this a read",
+    "do yourself a favor and read this",
+    "you won't want to miss this one",
+    "save this for later",
+    "bookmark this",
+    "don't sleep on this one",
+    "thank me later",
+    "worth reading",
+    "worth paying attention to",
+    "worth a look",
+    "worth exploring",
+    "worth checking out",
+    "worth your time",
+    "*checks notes*",
+    "*chef's kiss*",
+    "*mic drop*",
+    "*takes a deep breath*",
+    "*sips coffee*",
+    "(yes, really)",
+    "(no, seriously)",
+    "hot take",
+    "fun fact",
+    "pro tip",
+    "psa",
+    "unpopular opinion",
+    "because of course it does",
+    "thrilled to announce",
+    "excited to share",
+    "humbled to announce",
+    "humbled to share"
+   ],
+   "module": "marketing-social"
+  },
+  {
+   "id": "LEX-044",
+   "pattern": "formulaic headers and listicle counts",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "overview",
+    "key points",
+    "summary",
+    "conclusion",
+    "introduction",
+    "three key takeaways",
+    "five things to know",
+    "here are the top seven"
+   ],
+   "module": null
+  },
+  {
+   "id": "LEX-046",
+   "pattern": "fiction stock imagery and default names",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": "n/a",
+   "wordlist": [
+    "she felt a chill",
+    "a shiver ran down",
+    "the air was thick with",
+    "let out a breath she didn't know she was holding"
+   ],
+   "module": "genres"
+  },
+  {
+   "id": "PRC-013",
+   "pattern": "no new tells: re-scan the rewrite",
+   "strength": "hard",
+   "scope": "all",
+   "threshold": "n/a",
+   "wordlist": [
+    "—",
+    "--"
+   ],
+   "module": null
+  },
+  {
+   "id": "PUN-001",
+   "pattern": "em dash rate",
+   "strength": "hard",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    " – ",
+    "--",
+    "—"
+   ],
+   "module": null
+  },
+  {
+   "id": "PUN-002",
+   "pattern": "dash stand-ins between clauses",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "no dashes between clauses",
+    "standard": "at most 2 per 1,000 words and at most 1 per paragraph; none used for a reveal, pivot or punch-line",
+    "relaxed": "flag only clusters: 5+ per piece or more than 4 per 1,000 words"
+   },
+   "wordlist": [
+    " - ",
+    " -- ",
+    "–"
+   ],
+   "module": null
+  },
+  {
+   "id": "PUN-005",
+   "pattern": "parenthetical hedging and fragments",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "any hedge or afterthought in parentheses",
+    "standard": "parenthetical hedges such as '(and, increasingly, Z)'; any '(s)'",
+    "relaxed": "only '(s)' plurals"
+   },
+   "wordlist": [
+    "(s)"
+   ],
+   "module": null
+  },
+  {
+   "id": "PUN-008",
+   "pattern": "semicolon use",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "no semicolons in procedures or reference docs, and none anywhere in strict controlled-English mode",
+    "standard": "semicolons allowed; count toward PUN-004 when they replace dashes",
+    "relaxed": "no constraint"
+   },
+   "wordlist": [
+    ";"
+   ],
+   "module": null
+  },
+  {
+   "id": "PUN-010",
+   "pattern": "unicode decoration",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "any →, …, ✦, ★ or similar glyph in prose",
+    "standard": "decorative glyphs always; arrows or ellipsis characters when the rest of the text is plain ASCII",
+    "relaxed": "decorative glyphs (✦, ★, ➤) only"
+   },
+   "wordlist": [
+    "…",
+    "→",
+    "⇒",
+    "★",
+    "✦",
+    "➤"
+   ],
+   "module": null
+  },
+  {
+   "id": "PUN-011",
+   "pattern": "quote style consistency",
+   "strength": "soft",
+   "scope": "all",
+   "threshold": {
+    "strict": "straight quotes everywhere unless the destination requires curly",
+    "standard": "match destination; flag only mixed styles in one text or curly quotes in code-adjacent text",
+    "relaxed": "flag only mixed styles"
+   },
+   "wordlist": [
+    "‘",
+    "’",
+    "“",
+    "”"
+   ],
+   "module": null
+  },
+  {
+   "id": "PUN-014",
+   "pattern": "hyphenated compounds after the noun",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "every post-noun hyphenated compound",
+    "standard": "3 or more in a text",
+    "relaxed": "n/a (do not flag)"
+   },
+   "wordlist": [
+    "client-facing",
+    "high-quality",
+    "long-term",
+    "real-time",
+    "well-documented",
+    "well-known"
+   ],
+   "module": null
+  },
+  {
+   "id": "PUN-015",
+   "pattern": "ambiguous slash",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "every slash in running prose outside the exceptions",
+    "standard": "and/or and ad-hoc a/b pairs",
+    "relaxed": "and/or only"
+   },
+   "wordlist": [
+    "/",
+    "and/or"
+   ],
+   "module": null
+  },
+  {
+   "id": "SCO-005",
+   "pattern": "technical-sense exemptions",
+   "strength": "hard",
+   "scope": "prose",
+   "threshold": "n/a",
+   "wordlist": [
+    "robust",
+    "comprehensive",
+    "seamless",
+    "ecosystem",
+    "leverage",
+    "facilitate",
+    "underpin",
+    "streamline",
+    "test harness"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-001",
+   "pattern": "negative parallelism (not X but Y)",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag every instance; keep one only if it passes the earned-contrast test (STR-002)",
+    "standard": "at most one per piece, and only if earned; never in titles or section closers",
+    "relaxed": "flag only when two or more appear in one piece or one closes a section"
+   },
+   "wordlist": [
+    "not just",
+    "not only",
+    "not merely",
+    "but also",
+    "it's not x, it's y",
+    "isn't just",
+    "doesn't just",
+    "it's not just",
+    "is not ... but",
+    "x isn't the problem. y is.",
+    "the answer isn't",
+    "the question isn't",
+    "not because",
+    "stops being",
+    "doesn't mean x, but",
+    "not just x but y",
+    "this doesn't mean x. it means y.",
+    "..., no guessing"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-003",
+   "pattern": "negative listing / negation countdown",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "single: flag every negative listing",
+    "standard": "flag any countdown of two or more negations ending in a reveal; keep only if each negated item is a view the reader plausibly holds",
+    "relaxed": "flag only when it recurs in the same piece"
+   },
+   "wordlist": [
+    "no ... no ... just",
+    "not x. not y. just z.",
+    "it wasn't",
+    "not a"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-004",
+   "pattern": "reversed contrast flourish (Y rather than X)",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag every trailing rather-than clause",
+    "standard": "flag when two or more appear in a piece",
+    "relaxed": "off"
+   },
+   "wordlist": [
+    "rather than"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-005",
+   "pattern": "corrective framing disclaimer",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag every instance",
+    "standard": "flag when not motivated by an actual likely misreading",
+    "relaxed": "flag only when stacked"
+   },
+   "wordlist": [
+    "should be treated as",
+    "rather than as",
+    "does not establish",
+    "does not by itself establish",
+    "should not be confused with"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-006",
+   "pattern": "staccato fragment run",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag any run of two clipped fragments used for drama",
+    "standard": "flag runs of three or more short same-shape sentences or fragment paragraphs",
+    "relaxed": "flag only when runs recur across the piece"
+   },
+   "wordlist": [
+    "no setup. no config.",
+    "every. single. day."
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-008",
+   "pattern": "setup/reversal punchline and empty concession",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag every instance",
+    "standard": "flag the second and later instances in a piece",
+    "relaxed": "flag only when they close most paragraphs"
+   },
+   "wordlist": [
+    "not always. not perfectly."
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-015",
+   "pattern": "restating one-line closer / punchy paragraph ending",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "cut every restating closer; flag any paragraph ending on a one-liner",
+    "standard": "cut restating closers; flag punchy endings when more than one in three paragraphs end that way",
+    "relaxed": "cut restating closers only when they repeat across sections"
+   },
+   "wordlist": [
+    "that is the real win",
+    "that distinction matters",
+    "read that again",
+    "let that sink in",
+    "this shows the importance of",
+    "the message was clear",
+    "it was a lesson in",
+    "that's the real win"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-016",
+   "pattern": "restating and fractal summaries",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "flag any section-level recap",
+    "standard": "flag recaps when more than one section has one, or any 'in this section we will' plus 'as we have seen' pair",
+    "relaxed": "flag only a recap at every level"
+   },
+   "wordlist": [
+    "in summary",
+    "in conclusion",
+    "overall",
+    "in this section",
+    "as we've seen"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-022",
+   "pattern": "repeated sentence openers (anaphora runs)",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag two adjacent sentences with the same skeleton (same comma count, constituent order and similar length) and three in a row with the same opener",
+    "standard": "flag three or more in a row, ignoring ordinary pronoun narration",
+    "relaxed": "flag four or more in a row"
+   },
+   "wordlist": [
+    "interestingly,",
+    "importantly,",
+    "notably,",
+    "crucially,",
+    "furthermore,",
+    "moreover,",
+    "additionally,",
+    "consequently,"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-023",
+   "pattern": "rhetorical and self-answered questions",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "what if"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-024",
+   "pattern": "chatty sentence starters (So, Look)",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag every instance",
+    "standard": "flag when used more than once in a piece",
+    "relaxed": "off"
+   },
+   "wordlist": [
+    "so",
+    "look,"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-025",
+   "pattern": "false range (from X to Y)",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "from x to y",
+    "from x to y (as breadth)",
+    "no x, no y, no z"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-026",
+   "pattern": "trailing participle significance clause",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "flag every trailing significance participle",
+    "standard": "flag when the participle carries no new fact or a list word appears with an inanimate subject",
+    "relaxed": "flag only when stacked or repeated"
+   },
+   "wordlist": [
+    "aligns with",
+    "contributing to",
+    "cultivating",
+    "emphasizing",
+    "encompassing",
+    "enhancing",
+    "ensuring",
+    "fostering",
+    "highlighting",
+    "reflecting",
+    "resonate with",
+    "showcasing",
+    "symbolizing",
+    "underscoring",
+    "valuable insights"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-027",
+   "pattern": "false agency",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag every abstraction performing a human act",
+    "standard": "flag when a consequential choice or accountability is hidden",
+    "relaxed": "flag only accountability-hiding cases"
+   },
+   "wordlist": [
+    "becomes a fix",
+    "lives or dies",
+    "the decision emerges",
+    "the culture shifts",
+    "the conversation moves toward",
+    "the data tells us",
+    "the market rewards"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-031",
+   "pattern": "transformation crutch (becomes / turns into)",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag every unexplained transformation",
+    "standard": "flag when it repeats in a piece",
+    "relaxed": "off"
+   },
+   "wordlist": [
+    "becomes",
+    "turns into"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-040",
+   "pattern": "writing about the document or the diff",
+   "strength": "default",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "was added to replace",
+    "generated from",
+    "compiled from",
+    "the table below compares",
+    "this section is organized by",
+    "anything unconfirmed is flagged",
+    "anything unconfirmed is flagged rather than guessed"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-044",
+   "pattern": "narrative template (By the time X, I was Y)",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag every instance",
+    "standard": "flag when used more than once",
+    "relaxed": "off"
+   },
+   "wordlist": [
+    "by the time"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-047",
+   "pattern": "unambiguous reference",
+   "strength": "default",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "this",
+    "which",
+    "it",
+    "they"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-048",
+   "pattern": "modifier placement",
+   "strength": "default",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "only",
+    "not"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-055",
+   "pattern": "attribution tags in summaries",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "flag any repeated tag",
+    "standard": "flag three or more tags in a paragraph",
+    "relaxed": "off"
+   },
+   "wordlist": [
+    "he said",
+    "the author states"
+   ],
+   "module": null
+  },
+  {
+   "id": "STR-066",
+   "pattern": "introduction opening and results",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": "n/a",
+   "wordlist": [
+    "the literature lacks a model of"
+   ],
+   "module": "academic-econ"
+  },
+  {
+   "id": "STR-067",
+   "pattern": "introduction roadmap, length and failure modes",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": "n/a",
+   "wordlist": [
+    "the remainder of this paper is organized as follows"
+   ],
+   "module": "academic-econ"
+  },
+  {
+   "id": "STR-072",
+   "pattern": "conclusion",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": "n/a",
+   "wordlist": [
+    "i leave",
+    "for future research"
+   ],
+   "module": "academic-econ"
+  },
+  {
+   "id": "TON-003",
+   "pattern": "AI self-reference",
+   "strength": "hard",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "as an ai language model",
+    "as of my last knowledge update",
+    "as someone who",
+    "i don't have personal opinions"
+   ],
+   "module": null
+  },
+  {
+   "id": "TON-004",
+   "pattern": "customer-service register",
+   "strength": "default",
+   "scope": "all",
+   "threshold": {
+    "strict": "any single phrase",
+    "standard": "2 or more in a message",
+    "relaxed": "3 or more"
+   },
+   "wordlist": [
+    "apologize for any inconvenience",
+    "i hope this message finds you well",
+    "i respectfully request",
+    "i understand your concern",
+    "please let me know if"
+   ],
+   "module": null
+  },
+  {
+   "id": "TON-010",
+   "pattern": "didactic disclaimers",
+   "strength": "default",
+   "scope": "all",
+   "threshold": "single",
+   "wordlist": [
+    "it is crucial to",
+    "it is important to note",
+    "it's important to note",
+    "it's important to remember",
+    "may vary"
+   ],
+   "module": null
+  },
+  {
+   "id": "TON-012",
+   "pattern": "consequence-free importance",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "this matters because",
+    "why this matters"
+   ],
+   "module": null
+  },
+  {
+   "id": "TON-014",
+   "pattern": "pedagogical hand-holding",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "any single phrase",
+    "standard": "2 or more per piece, or any for an expert audience",
+    "relaxed": "3 or more per piece"
+   },
+   "wordlist": [
+    "it's like a",
+    "let's break this down",
+    "let's dive in",
+    "let's explore",
+    "let's unpack",
+    "think of it as",
+    "think of it like"
+   ],
+   "module": null
+  },
+  {
+   "id": "TON-015",
+   "pattern": "minimising and polite filler in procedures",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "easily",
+    "easy",
+    "just",
+    "please",
+    "quickly",
+    "simply"
+   ],
+   "module": null
+  },
+  {
+   "id": "TON-016",
+   "pattern": "imagine a world",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "imagine a world",
+    "imagine a world where",
+    "picture this"
+   ],
+   "module": null
+  },
+  {
+   "id": "TON-017",
+   "pattern": "false vulnerability",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": {
+    "strict": "any single instance",
+    "standard": "2 or more per piece",
+    "relaxed": "flag only clusters with other tells"
+   },
+   "wordlist": [
+    "and yes,",
+    "i'll be honest",
+    "let me be real",
+    "this is not a rant"
+   ],
+   "module": null
+  },
+  {
+   "id": "TON-019",
+   "pattern": "performed humanity (over-correction guard)",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "n/a",
+   "wordlist": [
+    "fr",
+    "lowkey",
+    "ngl",
+    "no cap",
+    "vibes"
+   ],
+   "module": null
+  },
+  {
+   "id": "TON-021",
+   "pattern": "pre-announcing features",
+   "strength": "default",
+   "scope": "prose",
+   "threshold": "single",
+   "wordlist": [
+    "coming soon",
+    "in a future release",
+    "we will soon support"
+   ],
+   "module": null
+  },
+  {
+   "id": "TON-022",
+   "pattern": "honest modals",
+   "strength": "soft",
+   "scope": "prose",
+   "threshold": {
+    "strict": "limit modals to can, must and will where no certainty is lost",
+    "standard": "swap a modal only when the meaning is unchanged; keep may and should that carry real uncertainty or advice",
+    "relaxed": "no constraint"
+   },
+   "wordlist": [
+    "may",
+    "might",
+    "could",
+    "should",
+    "shall",
+    "would"
+   ],
+   "module": null
+  }
+ ]
+}
