@@ -81,9 +81,11 @@ Clone the repository and run `./install.sh` (Claude Code and `~/.agents/skills`)
 
 ### ChatGPT
 
-Under Skills, choose Create, then Upload from your computer, and upload [`chatgpt/prosewise.zip`](chatgpt/prosewise.zip)
-(plus [`chatgpt/prosewise-voice.zip`](chatgpt/prosewise-voice.zip) if you want the voice profile). ChatGPT takes one
-skill per upload. Notes and limits: [chatgpt/README.md](chatgpt/README.md).
+On the web version of ChatGPT, prosewise works in **Work mode**. In regular Chat the installed skill is not loaded:
+other users report the same for any uploaded skill, and OpenAI does not document it. To install it, zip the
+`skills/prosewise` folder (the one that contains `SKILL.md`), open Skills, choose Create, then Upload from your computer,
+and start a new Work task. Upload `skills/prosewise-voice` the same way if you want the voice profile. Skills depend on
+your plan, and a workspace admin may have to allow uploads.
 
 ### Clear the field
 

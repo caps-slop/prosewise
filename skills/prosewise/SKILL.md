@@ -8,7 +8,7 @@ description: >-
   a personal voice profile built with prosewise-voice.
 license: MIT
 metadata:
-  version: "0.5.2"
+  version: "0.5.3"
 ---
 
 # prosewise

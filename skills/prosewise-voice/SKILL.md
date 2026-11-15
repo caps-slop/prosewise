@@ -7,7 +7,7 @@ description: >-
   the corpus is never uploaded or committed.
 license: MIT
 metadata:
-  version: "0.5.2"
+  version: "0.5.3"
 ---
 
 # prosewise-voice
